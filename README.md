@@ -1,0 +1,2 @@
+# bingam
+This should work.
