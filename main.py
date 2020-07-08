@@ -3,7 +3,6 @@ import random
 from kivymd.app import MDApp
 from kivymd.uix.screen import Screen
 from kivymd.uix.button import MDRectangleFlatButton, MDFlatButton
-from kivymd.uix.label import MDLabel
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.datatables import MDDataTable
 from kivy.metrics import dp
@@ -16,10 +15,9 @@ from kivy.core.audio import SoundLoader
 class BDApp(MDApp):
 
     def build(self):
-        self.icon = "bgicon.ico"
-        self.hover = SoundLoader.load("sfx/sfx_hover.mp3")
-        self.deny = SoundLoader.load("sfx/sfx_deny.mp3")
-        self.accept = SoundLoader.load("sfx/sfx_accept.mp3")
+        self.hover = SoundLoader.load("sfx_hover.mp3")
+        self.deny = SoundLoader.load("sfx_deny.mp3")
+        self.accept = SoundLoader.load("sfx_accept.mp3")
         self.cy = 0
         self.cx = 0
         self.theme_cls.primary_palette = "Blue"
@@ -137,8 +135,8 @@ class BDApp(MDApp):
         self.confdialog.dismiss()
         cong = MDDialog(size_hint=(0.65, 0.65), text="Congratulations! (Intermission...)")
         cong.open()
-        bingoque = ["sfx/sfx_bingo1.wav", "sfx/sfx_bingo2.wav", "sfx/sfx_bingo3.wav", "sfx/sfx_bingo4.wav",
-                    "sfx/sfx_bingo5.wav"]
+        bingoque = ["sfx_bingo1.wav", "sfx_bingo2.wav", "sfx_bingo3.wav", "sfx_bingo4.wav",
+                    "sfx_bingo5.wav"]
         self.accept.play()
         bingoplay = SoundLoader.load(bingoque[random.randint(0,4)])
         bingoplay.play()
